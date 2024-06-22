@@ -17,8 +17,8 @@ function focusNextInput(input)
  {
             if (event.key === 'Backspace') {
                 const currentInput = event.target;
-                const prevInput = currentInput.previousElementSibling;
 				currentInput.value = ''; 
+                const prevInput = currentInput.previousElementSibling;
                 if (prevInput) {
                     prevInput.focus();
                 }
