@@ -1,11 +1,6 @@
-//your JS code here. If required.
-function generateOTP() 
-{
-    return Math.floor(100000 + Math.random() * 900000);
-}
 
 // Focus on the next input when a digit is entered
-function focusNextInput(input) 
+function focused(input) 
 {
     const nextInput = input.nextElementSibling;
     if (nextInput) 
@@ -20,11 +15,10 @@ function focusNextInput(input)
                 const prevInput = currentInput.previousElementSibling;
                 if (prevInput) {
                     prevInput.focus();
+					currentInput.value = ''; 
+				    currentInput=prevInput;
+					currentInput.focus();
                 }
-				currentInput.value = ''; 
+				
             }
 }
-
-// Example usage: Generate OTP and display it
-const otp = generateOTP();
-console.log(`Generated OTP: ${otp}`);
